@@ -7,9 +7,9 @@
     "start": "node index.js"
   },
   "dependencies": {
-    "canvas": "^2.9.0",
-    "node-fetch": "^3.3.0"
-  },
+  "node-fetch": "^2.6.7",  // Use the last version before v3, which supports CommonJS
+  "canvas": "^2.9.0"
+},
   "engines": {
     "node": "20.x"
   },
