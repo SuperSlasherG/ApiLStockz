@@ -40,12 +40,12 @@ module.exports = async (req, res) => {
     // You might need to adjust the x and y coordinates for your specific image
     const leftX = 100;  // X-coordinate for left number
     const leftY = image.height / 2 + 50;  // Y-coordinate for left number
-    ctx.fillText(number, leftX, leftY);
+    ctx.fillText(123, leftX, leftY);
 
     // Draw the number in the right circled area
     const rightX = image.width - 100;  // X-coordinate for right number
     const rightY = image.height / 2 + 50;  // Y-coordinate for right number
-    ctx.fillText(number, rightX, rightY);
+    ctx.fillText(123, rightX, rightY);
 
     // Send the modified image as a response
     res.setHeader('Content-Type', 'image/png');
