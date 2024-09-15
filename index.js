@@ -3,7 +3,7 @@ const fetch = require('node-fetch');
 
 module.exports = async (req, res) => {
   const imageUrl = req.query.imageUrl;
-  const text = req.query.text || '[50;100]';
+  const number = req.query.number || '10'; // The number to place on the image
   const width = 500;
   const height = 500;
 
@@ -31,13 +31,21 @@ module.exports = async (req, res) => {
     ctx.drawImage(image, 0, 0);
 
     // Set text settings
-    ctx.font = '40px Arial';
-    ctx.fillStyle = 'white';
+    ctx.font = '50px Arial'; // Adjust font size as needed
+    ctx.fillStyle = 'white'; // Color of the number
     ctx.textAlign = 'center';
     ctx.textBaseline = 'middle';
 
-    // Draw the text
-    ctx.fillText(text, image.width / 2, image.height / 2);
+    // Draw the number in the left circled area
+    // You might need to adjust the x and y coordinates for your specific image
+    const leftX = 100;  // X-coordinate for left number
+    const leftY = image.height / 2 + 50;  // Y-coordinate for left number
+    ctx.fillText(number, leftX, leftY);
+
+    // Draw the number in the right circled area
+    const rightX = image.width - 100;  // X-coordinate for right number
+    const rightY = image.height / 2 + 50;  // Y-coordinate for right number
+    ctx.fillText(number, rightX, rightY);
 
     // Send the modified image as a response
     res.setHeader('Content-Type', 'image/png');
