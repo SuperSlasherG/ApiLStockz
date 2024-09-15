@@ -32,7 +32,7 @@ module.exports = async (req, res) => {
 
     // Set text settings
     ctx.font = '50px Arial'; // Adjust font size as needed
-    ctx.fillStyle = 'white'; // Color of the number
+    ctx.fillStyle = 'black'; // Color of the number
     ctx.textAlign = 'center';
     ctx.textBaseline = 'middle';
 
